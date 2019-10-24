@@ -31,6 +31,7 @@ static int num = 0;
 
 module_param(value,int,S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
 module_param(mystring,charp,0000);
+module_param_array(myarr,int,&num,0000); //nobody and read write nor execute
 /*There are 4 paramters when using module_param_array.
  * 1. Array name
  * 2. Array type
@@ -38,7 +39,6 @@ module_param(mystring,charp,0000);
  * of elements of the array initialized by user at module loading time.
  * 4. permission bits
  */
-module_param_array(myarr,int,&num,0000); //nobody and read write nor execute
 
 static int __init begin(void)
 {
